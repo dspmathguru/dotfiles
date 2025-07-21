@@ -125,6 +125,7 @@ export PATH=$PATH:~/JetBrainsGateway/JetBrainsGateway/bin
 export PATH=$PATH:/opt/nvim
 export PATH=$PATH:~/jetbrains/pycharm/bin
 export PATH=~/cmake/cmake/bin:$PATH
+export PATH=~/cad/oss-cad-suite/bin:$PATH
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
