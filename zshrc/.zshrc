@@ -119,8 +119,12 @@ test -e $RJJT_ZSH && source $RJJT_ZSH
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:/Applications/Inkscape.app/Contents/MacOS
 export PATH=$PATH:~/st/stm32cubeide
+export PATH=$PATH:~/STM32CubeMX
 export PATH=$PATH:~/idea/idea/bin
 export PATH=$PATH:~/JetBrainsGateway/JetBrainsGateway/bin
+export PATH=$PATH:/opt/nvim
+export PATH=$PATH:~/jetbrains/pycharm/bin
+export PATH=~/cmake/cmake/bin:$PATH
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
