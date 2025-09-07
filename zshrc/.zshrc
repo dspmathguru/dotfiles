@@ -174,6 +174,20 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  export PATH=$PATH:~/bin/Linux
+else
+  export PATH=$PATH:~/bin/OSX
+fi
+
+
+[[ -d "/opt/nordic/ncs/v3.1.0" ]] \
+  && source /opt/nordic/ncs/v3.1.0/zephyr/zephyr-env.sh \
+  && export PATH=$PATH:/opt/nordic/ncs/toolchains/5c0d382932/bin
+
+# From nrfutil completion install
+[[ -r "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh" ]] && . "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh"
+
 # For ruby and used by React Native
 [[ $(whence -p rbenv) ]] && eval "$(rbenv init - zsh)"
 
