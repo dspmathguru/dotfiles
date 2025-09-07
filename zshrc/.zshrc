@@ -185,6 +185,10 @@ fi
   && source /opt/nordic/ncs/v3.1.0/zephyr/zephyr-env.sh \
   && export PATH=$PATH:/opt/nordic/ncs/toolchains/5c0d382932/bin
 
+[[ -d "/home/rjjt/ncs/v3.1.0" ]] \
+  && source ~/ncs/v3.1.0/zephyr/zephyr-env.sh \
+  && export PATH=$PATH:~/ncs/toolchains/c5be9c56c7/bin
+
 # From nrfutil completion install
 [[ -r "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh" ]] && . "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh"
 
