@@ -125,7 +125,7 @@ export PATH=$PATH:~/JetBrainsGateway/JetBrainsGateway/bin
 export PATH=$PATH:/opt/nvim
 export PATH=$PATH:~/jetbrains/pycharm/bin
 export PATH=~/cmake/cmake/bin:$PATH
-export PATH=~/cad/oss-cad-suite/bin:$PATH
+export PATH=$PATH:~/cad/oss-cad-suite/bin
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
@@ -181,16 +181,25 @@ else
 fi
 
 
-[[ -d "/opt/nordic/ncs/v3.1.0" ]] \
-  && source /opt/nordic/ncs/v3.1.0/zephyr/zephyr-env.sh \
-  && export PATH=$PATH:/opt/nordic/ncs/toolchains/5c0d382932/bin
-
-[[ -d "/home/rjjt/ncs/v3.1.0" ]] \
-  && source ~/ncs/v3.1.0/zephyr/zephyr-env.sh \
-  && export PATH=$PATH:~/ncs/toolchains/c5be9c56c7/bin
+[[ -d "/home/rjjt/ncs/v3.1.1" ]] \
+  && source ~/ncs/v3.1.1/zephyr/zephyr-env.sh \
+  && export PATH=$PATH:~/ncs/toolchains/b2ecd2435d/bin \
+  && export PATH=$PATH:~/ncs/toolchains/b2ecd2435d/usr/bin \
+  && export PATH=$PATH:~/ncs/toolchains/b2ecd2435d/usr/local/bin
 
 # From nrfutil completion install
 [[ -r "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh" ]] && . "${HOME}/.nrfutil/share/nrfutil-completion/scripts/zsh/setup.zsh"
+
+# JLink
+[[ -d "/opt/SEGGER/JLink" ]] \
+  && export PATH=$PATH:/opt/SEGGER/JLink
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Rust
+[ -d "$HOME/.cargo/eng" ] && . "$HOME/.cargo/env"
 
 # For ruby and used by React Native
 [[ $(whence -p rbenv) ]] && eval "$(rbenv init - zsh)"
